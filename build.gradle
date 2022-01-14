@@ -26,11 +26,11 @@ configurations {
 }
 
 dependencies {
-    implementation 'org.clojure:clojure:1.10.1'
-    implementation 'org.clojure:tools.namespace:1.0.0'
-    implementation 'refactor-nrepl:refactor-nrepl:2.4.0'
-    implementation 'cider:cider-nrepl:0.18.0'
-    implementation 'nrepl:nrepl:0.7.0'
+    implementation 'org.clojure:clojure:1.10.3'
+    implementation 'org.clojure:tools.namespace:1.2.0'
+    implementation 'refactor-nrepl:refactor-nrepl:3.2.0'
+    implementation 'cider:cider-nrepl:0.28.0'
+    implementation 'nrepl:nrepl:0.9.0'
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/

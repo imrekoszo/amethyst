@@ -4,16 +4,13 @@
 ; which is available at http://www.eclipse.org/legal/epl-2.0
 ;
 
-(ns duplicated-ns
+#_(ns not-ns-form)
+
+(ns form-before-ns
   "doc string"
   (:require
    [clojure.core.async :as async :refer [<! <!! >! >!!]]
    [clojure.tools.logging :refer :all]))
-
-(ns duplicated-ns
-  "doc string"
-  (:require [clojure.tools.logging :refer :all]
-            [clojure.core.async :as async :refer [>! <! >!! <!!]]))
 
 (defn some-func []
   (comment "do something"))

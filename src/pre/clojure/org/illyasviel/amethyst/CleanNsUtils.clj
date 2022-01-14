@@ -27,7 +27,7 @@
   [[_ & imports]]
   (->> imports
        (map (fn [single-import]
-              (if (vector? single-import)
+              (if (sequential? single-import)
                 (seq single-import)
                 (let [import-str (str single-import)
                       split-import (str/split import-str #"\.")]

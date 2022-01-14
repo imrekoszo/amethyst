@@ -23,33 +23,36 @@ import java.nio.charset.StandardCharsets
 object InstrumentClojure {
 
     private val candidates = listOf(
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.reader_macro.ReaderNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.fn.FnNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.whitespace.WhitespaceNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.seq.SeqNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.keyword.KeywordNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.forms.FormsNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.whitespace.CommaNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.string.StringNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.meta.MetaNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.regex.RegexNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.comment.CommentNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.integer.IntNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.quote.QuoteNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.reader_macro.ReaderMacroNode",
-            "cider.inlined_deps.toolsnamespace.v0v3v0_alpha4.clojure.tools.namespace.dependency.MapDependencyGraph",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.reader_macro.DerefNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.token.TokenNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.whitespace.NewlineNode",
-            "mranderson048.rewrite_clj.v0v6v0.rewrite_clj.node.uneval.UnevalNode"
+      //  "cider.inlined_deps.toolsnamespace.v0v3v0_alpha4.clojure.tools.namespace.dependency.MapDependencyGraph",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.comment.CommentNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.fn.FnNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.forms.FormsNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.integer.IntNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.keyword.KeywordNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.meta.MetaNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.namespaced_map.MapQualifierNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.namespaced_map.NamespacedMapNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.quote.QuoteNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.reader_macro.DerefNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.reader_macro.ReaderMacroNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.reader_macro.ReaderNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.regex.RegexNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.seq.SeqNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.stringz.StringNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.token.SymbolNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.token.TokenNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.uneval.UnevalNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.whitespace.CommaNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.whitespace.NewlineNode",
+        "refactor_nrepl.inlined_deps.rewrite_clj.v1v0v699_alpha.rewrite_clj.node.whitespace.WhitespaceNode"
     ).map { it.replace(".", File.separator) + ".class" }
 
     fun instrument(sourceSetOutput: SourceSetOutput) {
         println("enhancement clojure defrecord class")
-        val fileTree = sourceSetOutput.dirs.asFileTree
-        candidates.forEach { candidate ->
-            handleClass(fileTree.filter { it.path.endsWith(candidate) }.singleFile)
-        }
+//        val fileTree = sourceSetOutput.dirs.asFileTree
+//        candidates.forEach { candidate ->
+//            handleClass(fileTree.filter { it.path.endsWith(candidate) }.singleFile)
+//        }
     }
 
     private fun handleClass(file: File) {

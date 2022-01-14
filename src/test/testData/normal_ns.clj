@@ -7,8 +7,9 @@
 (ns normal-ns
   "Some doc string"
   (:import
-    (org.apache.commons.io FileUtils)
-    (java.nio.file Files LinkOption))
+   org.apache.commons.io.FileUtils
+    (java.nio.file Files LinkOption)
+    [java.lang NoSuchFieldError NoClassDefFoundError])
   (:use [riemann.time :only [unix-time]]
         [riemann.common :only [deprecated localhost event]]
         clojure.tools.logging

@@ -40,7 +40,7 @@ class CleanNsActionTest : LightPlatformCodeInsightFixtureTestCase() {
     }
 
     fun `test form before ns without exception`() {
-        assertFileContentAfterAction("form_before_ns.clj", "form_before_ns.clj")
+        assertFileContentAfterAction("form_before_ns.clj", "form_before_ns.after.clj")
     }
 
     fun `test unsupported ns without exception`() {
